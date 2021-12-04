@@ -1,16 +1,14 @@
+/* stylelint-disable no-missing-end-of-source-newline */
 html,
 body {
 	margin: 0;
 	padding: 0;
+	/* stylelint-disable-next-line order/properties-order */
+	color: var(--black);
+	background: #F5F6F8;
 
-	font-family:
-		-apple-system,
-		BlinkMacSystemFont,
-		Roboto,
-		Oxygen,
-		Ubuntu,
-		Cantarell,
-		sans-serif;
+	/* stylelint-disable-next-line string-quotes */
+	font-family: 'Noto Sans Display', sans-serif;
 }
 
 a {
@@ -21,4 +19,15 @@ a {
 
 * {
 	box-sizing: border-box;
+}
+
+:root {
+	--black: #3B434E;
+	--white: white;
+	--primary: #7653FC;
+	--red: #FC836D;
+	--green: #1DC37E;
+	--green-light: #C8F8E4;
+	/* stylelint-disable-next-line string-quotes */
+	--font-family: 'Noto Sans Display', sans-serif;
 }
