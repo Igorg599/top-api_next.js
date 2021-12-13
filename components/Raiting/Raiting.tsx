@@ -1,5 +1,5 @@
 import { RatingProps } from "./Raiting.props"
-import styles from "./Rating.module.css"
+import styles from "./Raiting.module.css"
 import cn from "classnames"
 import StarIcon from "./star.svg"
 import {

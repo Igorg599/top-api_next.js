@@ -1,8 +1,9 @@
 import { Htag, Button, P, Tag } from "../components"
+import { Layout } from "../layout/Layout"
 
 export default function Home(): JSX.Element {
   return (
-    <div>
+    <Layout>
       <Htag tag="h1">Text</Htag>
       <Button appearance="primary" arrow="right">
         Button
@@ -15,6 +16,6 @@ export default function Home(): JSX.Element {
       <Tag size="m" color="red">
         vsdfsdfD
       </Tag>
-    </div>
+    </Layout>
   )
 }
