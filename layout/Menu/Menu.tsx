@@ -2,7 +2,7 @@ import styles from "./Menu.module.css"
 import cn from "classnames"
 import { useContext } from "react"
 import { AppContext } from "../../context/app.context"
-import { FirstLevelmenuItem } from "../../interfaces/menu.interface"
+import { FirstLevelmenuItem, PageItem } from "../../interfaces/menu.interface"
 import CoursesItem from "./icons/courses.svg"
 import ServiceItem from "./icons/service.svg"
 import BooksItem from "./icons/books.svg"
@@ -60,8 +60,25 @@ export const Menu = (): JSX.Element => {
       </>
     )
   }
-  const buildSecondLevel = () => {}
-  const buildThirdLevel = () => {}
+  const buildSecondLevel = () => {
+    return (
+      <div>
+        {menu.map((m) => (
+          <div key={m._id.secondCategory}>
+            <div className={styles.secondLevel}>{m._id.secondCategory}</div>
+            <div
+              className={cn(styles.secondLevelBlock, {
+                [styles.secondLevelBlockOpened]: m.isOpened,
+              })}
+            >
+              {buildThirdLevel()}
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+  const buildThirdLevel = (pages: PageItem[]) => {}
 
   return <div className={styles.menu}>{buildFirstLevel()}</div>
 }
