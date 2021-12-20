@@ -39,13 +39,29 @@ const firstLevelMenu: FirstLevelmenuItem[] = [
 export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext)
 
-  return (
-    <div>
-      <ul>
-        {menu.map((m) => (
-          <li key={m._id.secondCategory}>{m._id.secondCategory}</li>
+  const buildFirstLevel = () => {
+    return (
+      <>
+        {firstLevelMenu.map((menu) => (
+          <div key={menu.route}>
+            <a href={`/${menu.route}`}>
+              <div
+                className={cn(styles.firstLevel, {
+                  [styles.firstLevelActive]: menu.id == firstCategory,
+                })}
+              >
+                {menu.icon}
+                <span>{menu.name}</span>
+              </div>
+            </a>
+            {menu.id == firstCategory && buildSecondLevel()}
+          </div>
         ))}
-      </ul>
-    </div>
-  )
+      </>
+    )
+  }
+  const buildSecondLevel = () => {}
+  const buildThirdLevel = () => {}
+
+  return <div className={styles.menu}>{buildFirstLevel()}</div>
 }
