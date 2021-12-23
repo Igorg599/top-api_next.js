@@ -55,12 +55,20 @@
 	border-left: 1px solid #DFDFDF;
 }
 
-.secondLevelBlock {
+/* .secondLevelBlock {
 	overflow: hidden;
 
 	padding: 0;
 
 	list-style: none;
+} */
+
+.secondLevelBlock {
+	display: none;
+}
+
+.secondLevelBlockOpened {
+	display: block;
 }
 
 .thirdLevel {
