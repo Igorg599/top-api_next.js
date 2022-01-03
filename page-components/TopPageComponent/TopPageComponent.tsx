@@ -8,7 +8,7 @@ export const TopPageComponent = ({
   firstCategory,
 }: TopPageComponentProps): JSX.Element => {
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.title}>
         <Htag tag="h1">{page.title}</Htag>
         {products && (
@@ -17,6 +17,6 @@ export const TopPageComponent = ({
           </Tag>
         )}
       </div>
-    </>
+    </div>
   )
 }
